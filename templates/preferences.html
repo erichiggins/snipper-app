@@ -1,0 +1,55 @@
+{% extends "_layout.html" %}
+
+
+{% block title %} Settings{% endblock %}
+
+
+{% block stylesheets %}
+<link href="http://www.google.com/css/modules/forms/g-form-boxer.css" type="text/css" rel="stylesheet">
+<style type="text/css">
+  .g-form { width: 600px; }
+</style>
+{% endblock %}
+
+
+{% block scripts %}
+{% endblock %}
+
+
+{% block content %}<h2>Settings</h2>
+{% for error in errors %}
+  <p class="error" style="display:block;">{{error}}</p>
+{% endfor %}
+<form action="/settings" method="post">
+<input type="hidden" name="snipper_user_key" value="{{ snipper_user.key }}">
+<ul class="g-form">
+  <li><label>Date format</label>
+    <input name="date_format" value="{{ snipper_user.date_format }}">
+    (e.g. {% now "Y-m-d" %})
+    <p>Specify the <a href="http://docs.python.org/library/datetime.html#strftime-behavior" target="_blank">strftime format</a> that you'd like for your snippet emails.</p></li>
+  <li><label>Snippet format</label>
+  <input name="snippet_format" value="{{ snipper_user.snippet_format }}">
+    (e.g. - I felt lucky today)
+    <p>Specify the <a href="http://docs.python.org/library/stdtypes.html#string-formatting-operations" target="_blank">string format</a> for each line in your snippet emails. Be sure to provide one <strong>%s</strong> for the snippet.</p></li>
+  <li><label>Talkback</label>
+  <input name="send_confirm" value="1" type="checkbox"{% if snipper_user.send_confirm %} checked="checked"{% endif %}>
+  <p>Send back a confirmation that your snippet was saved successfully, usually in the form of a smiley <strong>:)</strong></p>
+  </li>
+  <li><label>Reset day</label>
+    <select name="reset_day">{% for day in reset_days %}
+      <option value="{{ forloop.counter0 }}"{% ifequal snipper_user.reset_day forloop.counter0 %} selected="selected"{% endifequal %}>{{ day }}</option>{% endfor %}
+    </select>
+    <p>Choose the weekday that Snipper should start on.</p></li>
+  <li><label>Reset hour</label>
+    <select name="reset_hour">{% for hour in reset_hours %}
+      <option value="{{ hour.0 }}"{% ifequal snipper_user.reset_hour hour.0 %} selected="selected"{% endifequal %}>{{ hour.1 }}</option>{% endfor %}
+    </select>
+    <p>Choose the hour that the reset should happen.</p></li>
+  <li><label>Email me</label>
+  <input name="mail_snippets" value="1" type="checkbox"{% if snipper_user.mail_snippets %} checked="checked"{% endif %}>
+  <p>Snipper can email your snippets to you upon reset. <a href="/report/weekly?offset=1" target="_blank">Send them now!</a></p></li>
+  <li><label>Timezone</label> <input name="timezone" value="{{ snipper_user.timezone }}"></li>
+  <li><label><a href="/">&laquo; Cancel</a></label>
+    <input type="submit" value="Save"></li>
+</ul>
+</form>{% endblock %}

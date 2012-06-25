@@ -1,0 +1,54 @@
+/**
+ * Copyright 2012 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *     Unless required by applicable law or agreed to in writing, software
+ *     distributed under the License is distributed on an "AS IS" BASIS,
+ *     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *     See the License for the specific language governing permissions and
+ *     limitations under the License.
+ */
+.cb {clear: both}
+.cl {clear: left}
+.cn {clear: none}
+.cr {clear: right}
+
+.dn {display: none}
+.db {display: block}
+.di {display: inline}
+
+.fl {float: left;width: auto}
+.fr {float: right;width: auto}
+.fn {float: none;width: auto}
+
+.fwb {font-weight: bold}
+.fwn {font-weight: normal}
+
+.lstc {list-style-type: circle}
+.lstd {list-style-type: disc}
+.lstn {list-style-type: none}
+
+.pa {position: absolute}
+.pf {position: fixed}
+.pr {position: relative}
+.ps {position: static}
+
+.tac {text-align: center}
+.tal {text-align: left}
+.tar {text-align: right}
+
+.vc {visibility: collapse}
+.vh {visibility: hidden}
+.vv {visibility: visible}
+
+.wa {width: auto}
+.wf {width: 100%}
+.wh {width: 50%}
+.wt {width: 33%}
+.wq {width: 25%}
+

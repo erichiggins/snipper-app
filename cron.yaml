@@ -1,0 +1,4 @@
+cron:
+- description: Snippet mailer
+  url: /report/weekly
+  schedule: every 1 hours synchronized

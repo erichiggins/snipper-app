@@ -1,0 +1,57 @@
+{% extends "_layout.html" %}
+
+{% block stylesheets %}{% if offset %}<style type="text/css">
+  #current, #newer { display: inline; }
+</style>{% endif %}{% endblock %}
+
+{% block scripts %}
+<script src="/js/behavior.js" type="text/javascript"></script>
+<script type="text/javascript">
+  snipper.Snippets.offset = {{ offset }};
+  snipper.Snippets.dates[{{ offset }}] = {
+    'from': '{{ start|date:"M d" }}',
+    'to': '{{ end|date:"M d" }}'
+  };
+  snipper.Snippets.snippets[{{ offset }}] = [{% for s in snippets %}
+  '{{ s|addslashes }}'{% if not forloop.last %},{% endif %}{% endfor %}];
+</script>
+{% endblock %}
+
+{% block content %}
+  <div class="g-section g-tpl-67-33">
+    <div class="g-unit g-first">
+      <div class="butter">{{msg}}</div>
+      <form id="addForm" action="/add" method="post" name="addForm">
+        <input name="v" value="web" type="hidden">
+        <div id="sErr" class="error"><p>No blank snippets please!</p></div>
+        <input id="s" name="s" class="default" value="What have you been working on?" type="text">
+        <input type="submit" value="Add">
+      </form>
+      <br>
+
+      <form id="viewForm" action="/" method="get">
+        <h3 id="userTitle">{{ user.nickname }}'s snippets</h3>
+        <div id="dateNav">
+          <a href="/?offset={{ older }}" id="older">&lsaquo; Older</a>
+          <strong id="date"> {{ start|date:"M d" }} to {{ end|date:"M d" }}</strong>
+          <a href="/?offset={{ newer }}" id="newer">Newer &rsaquo;</a>
+          <a href="/" id="current">Today</a>
+        </div>
+        <textarea id="snippetList" readonly="true" rows="80" cols="80">{% for s in snippets %}
+{{ s }}{% endfor %}</textarea>
+      </form>
+    </div>
+    <div class="g-unit">
+      <h3>So many ways to use Snipper, pick one!</h3>
+      <div class="news">
+        <p><strong>Google Talk:</strong> Add <a href="mailto:@appspot.com">@appspot.com</a> to your contact list, then tell <strong>snipper</strong> what you've been working on.</p>
+      </div><br>
+
+
+      <h3>Why Snipper?</h3>
+      <p>Snippets are a great way to track your work, but they can be difficult to manage.
+      Using Snipper makes the task of recording snippets quick and painless.</p>
+
+    </div>
+  </div>
+{% endblock %}

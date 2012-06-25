@@ -1,0 +1,205 @@
+/**
+ * Copyright 2012 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *     Unless required by applicable law or agreed to in writing, software
+ *     distributed under the License is distributed on an "AS IS" BASIS,
+ *     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *     See the License for the specific language governing permissions and
+ *     limitations under the License.
+ */
+html,body,div,h1,h2,h3,h4,h5,h6,p,img,dl,dt,dd,ol,ul,li,table,caption,tbody,
+tfoot,thead,tr,th,td,form,fieldset,embed,object,applet {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+html {
+  font: 81.25%/130% arial,sans-serif;
+  background-color: #fff;
+  direction: ltr;
+}
+body {
+  text-align: left;
+  margin: 1em 0;
+  color: #000;
+}
+a {
+  color: #00c;
+}
+a:active {
+  color: #f00;
+}
+a:visited {
+  color: #551a8b;
+}
+q {
+  quotes: none;
+}
+table {
+  border-collapse: collapse;
+  border-width: 0;
+  empty-cells: show;
+}
+input,
+select,
+textarea,
+option {
+  font: inherit;
+}
+textarea {
+  overflow: auto;
+}
+h1, h2, h3, h4, h5, p, ul, ol {
+  margin: 0 0 1em 0;
+}
+h1,
+h2 {
+  font-size: 1.3em;
+}
+h3 {
+  font-size: 1.1em;
+}
+h4,
+h5 {
+  font-size: 1em;
+}
+form label {
+  font-weight: bold;
+}
+ul li {
+  margin: .8em 0 .8em 1.3em;
+}
+.g-doc-1024 {
+  width: 1009px;
+  margin: 0 auto;
+}
+.g-section,
+.g-unit .g-section {
+  clear: both;
+}
+.g-section:after {
+  content: ".";
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.g-unit .g-section:after {
+  clear: none;
+}
+.g-unit .g-section {
+  overflow: hidden;
+}
+.g-unit {
+  margin: 0;
+  float: right;
+}
+.g-first {
+  float: left;
+}
+.g-tpl-67-33 .g-unit {
+  width: 32.999%;
+}
+.g-tpl-67-33 .g-first {
+  width: 66.999%;
+}
+.g-tpl-50-50 .g-unit {
+  width: 49.999%;
+}
+.g-tpl-50-50 .g-first {
+  width: 49.999%;
+}
+.g-tpl-75-25 .g-unit {
+  width: 24.999%;
+}
+.g-tpl-75-25 .g-first {
+  width: 74.999%;
+}
+.footer {
+  margin-top: 13px;
+  padding: 5px 0 0 0;
+  font-size: .9em;
+  text-align: center;
+}
+.error {
+  display: none;
+  font-weight: bold;
+  color: #f00;
+}
+.butter {
+  background-color: #ffee88;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.caption {
+  color: #333;
+  font-size: 85%;
+  padding: 0 0 0 60px;
+  margin: 0;
+}
+.co {
+  color: #f00;
+  font-weight: bold;
+}
+.news {
+  border: 1px solid #36c;
+  background-color: #e5ecf9;
+  padding: .5em;
+}
+.nostyle {
+  list-style-type: none;
+  padding: 0;
+}
+.nostyle li {
+  margin-left:0;
+}
+dl {
+  width: 75%;
+}
+dl, dl dt, dl dd {
+  margin: 0 0 1em 0;
+}
+dl dt {
+  font-weight:bold;
+}
+#userTitle {
+  float: left;
+  margin: 0 0 .5em;
+}
+#dateNav {
+  text-align: right;
+  padding-right: 35px;
+}
+#current,
+#newer {
+  display: none
+}
+#snippetList {
+  width: 93%;
+  height: 500px;
+  padding: 5px;
+  border: 1px solid #666;
+  background: transparent url('/images/cutman.png') bottom right no-repeat;
+}
+#s {
+  width: 73%;
+}
+#s.default {
+  color: #666;
+  font-style: italic;
+}
+#date {
+  font-size: .9em;
+}
+h1 {
+  margin-bottom: .3em;
+}

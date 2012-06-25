@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Snipper{% block title %}{% endblock %}</title>
+<link href="/css/snipper.css" rel="stylesheet" type="text/css">
+{% block stylesheets %}{% endblock %}</head>
+<body>{% include '_gaia.html' %}
+<div class="g-doc-1024" id="top">
+  <h1><a href="/">Snipper</a></h1>
+{% block content %}{% endblock %}
+  <div class="g-section footer">
+    &copy;{% now "Y" %} <a href="http://www.google.com/">Google</a>
+  </div>
+</div>{% block scripts %}{% endblock %}</body>
+</html>

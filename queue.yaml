@@ -1,0 +1,7 @@
+queue:
+- name: default
+  rate: 5/s
+- name: snippet-mail-queue
+  rate: 30/m
+- name: snippet-fetch-queue
+  rate: 30/m

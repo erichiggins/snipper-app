@@ -1,0 +1,75 @@
+application: snipper
+version: 9
+runtime: python
+api_version: 1
+
+inbound_services:
+- xmpp_message
+
+handlers:
+- url: /robots.txt
+  static_files: robots.txt
+  upload: robots.txt
+  expiration: "30d"
+
+- url: /js
+  static_dir: js
+  mime_type: "text/javascript"
+  expiration: "60d"
+
+- url: /css
+  static_dir: css
+  mime_type: "text/css"
+  expiration: "60d"
+
+- url: /images
+  static_dir: images
+  expiration: "60d"
+
+- url: /firefox/
+  static_files: firefox/index.html
+  upload: firefox/.*
+  expiration: "7d"
+
+- url: /firefox
+  static_dir: firefox
+  expiration: "7d"
+
+- url: /firefox/(.*\.xpi)
+  static_files: firefox/\1
+  mime_type: "application/x-xpinstall"
+  upload: firefox/.*\.xpi
+  expiration: "7d"
+
+- url: /favicon.ico
+  static_files: images/favicon.ico
+  upload: images/favicon.ico
+  expiration: "60d"
+
+- url: /report/.*
+  script: report.py
+
+- url: /remote_api
+  script: $PYTHON_LIB/google/appengine/ext/remote_api/handler.py
+  login: admin
+
+- url: /admin/.*
+  script: $PYTHON_LIB/google/appengine/ext/admin
+  login: admin
+
+- url: /_ah/xmpp/.*
+  script: chat.py
+
+- url: /_ah/queue/deferred
+  script: $PYTHON_LIB/google/appengine/ext/deferred/handler.py
+  login: admin
+
+- url: /_ereporter/.*
+  script: $PYTHON_LIB/google/appengine/ext/ereporter/report_generator.py
+  login: admin
+
+- url: /stats.*
+  script: $PYTHON_LIB/google/appengine/ext/appstats/ui.py
+
+- url: /.*
+  script: views.py
